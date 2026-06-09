@@ -85,21 +85,22 @@ Amplitude Modulation is the process of changing the amplitude of a relatively hi
 •	Verify the generated waveform using Tabulation and Model Waveform
 # PROGRAM:
 ```
-Am=10.7;
-fm=1792;
-fs=179200;
+Am=9.6;
+fm=1386;
+Ac=1.5*Am;
+fc=10*fm;
+fs=10*fc;
 t=0:1/fs:2/fm;
-Ac=16.05;
-fc=17920;
 em=Am*cos(2*3.14*fm*t);
 subplot(3,1,1);
-plot(t,em);
+plot(t,em)
 ec=Ac*cos(2*3.14*fc*t);
 subplot(3,1,2);
 plot(t,ec);
-eam=(Ac+em).*cos(2*3.14*fc*t); 
+eAm=(Ac+em).*cos(2*3.14*fc*t);
 subplot(3,1,3);
-plot(t,eam);
+plot(t,eAm)
+
 ```
 # MODEL GRAPH:
 <img width="919" height="1290" alt="image" src="https://github.com/user-attachments/assets/03d6ca7c-9fa1-4a92-81c6-2718308bad80" />
